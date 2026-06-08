@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Plus, Printer, X, Box, Info } from 'lucide-react';
-import Barcode from 'react-barcode';
+import QRCode from 'react-qr-code';
 import { useAuth } from '@/lib/AuthContext';
 
 type Item = {
@@ -121,20 +121,20 @@ export default function ItemsPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <h1 className="text-3xl font-bold tracking-tight">Master Barang & Stok</h1>
         {role === 'gudang' && (
           <button 
             onClick={() => setIsModalOpen(true)}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors"
+            className="w-full sm:w-auto justify-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors"
           >
             <Plus className="w-4 h-4" /> Tambah Barang
           </button>
         )}
       </div>
 
-      <div className="rounded-xl border bg-white shadow-sm overflow-hidden">
-        <table className="w-full text-sm text-left">
+      <div className="rounded-xl border bg-white shadow-sm overflow-x-auto">
+        <table className="w-full text-sm text-left min-w-[700px]">
           <thead className="bg-slate-50 border-b text-slate-500 font-medium">
             <tr>
               <th className="px-6 py-4">Kode Barang</th>
@@ -223,19 +223,19 @@ export default function ItemsPage() {
 
       {/* Print Modal (Only Gudang) */}
       {printItem && role === 'gudang' && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-xl shadow-xl w-full max-w-2xl p-8 text-center print:shadow-none print:w-full print:h-full print:flex print:flex-col print:items-center print:justify-center">
+        <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-200">
+          <div className="bg-white rounded-2xl shadow-xl w-full max-w-sm p-8 text-center print:shadow-none print:w-full print:h-full print:flex print:flex-col print:items-center print:justify-center">
             <h3 className="font-bold text-xl mb-2">{printItem.name}</h3>
             <p className="text-sm text-slate-500 mb-6 font-mono font-medium">{printItem.id}</p>
             
-            <div className="bg-white inline-block p-4 border-2 border-dashed border-slate-200 rounded-xl mb-6 max-w-full overflow-x-auto">
-              <Barcode value={printItem.id} width={1.5} height={80} fontSize={14} />
+            <div className="bg-white inline-block p-4 border-2 border-dashed border-slate-200 rounded-xl mb-6 mx-auto">
+              <QRCode value={printItem.id} size={160} />
             </div>
             
             <div className="flex justify-center gap-3 print:hidden">
-              <button onClick={() => setPrintItem(null)} className="px-4 py-2 text-slate-600 hover:bg-slate-100 border rounded-lg font-medium transition-colors">Tutup</button>
+              <button onClick={() => setPrintItem(null)} className="px-4 py-2 text-slate-600 hover:bg-slate-100 rounded-lg font-medium transition-colors">Tutup</button>
               <button onClick={handlePrint} className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium flex items-center gap-2 transition-colors">
-                <Printer className="w-4 h-4" /> Cetak Barcode Master
+                <Printer className="w-4 h-4" /> Cetak QR Code
               </button>
             </div>
           </div>

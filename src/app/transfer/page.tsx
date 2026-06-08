@@ -1,8 +1,9 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Send, CheckCircle2, Printer, X, Clock, CheckCircle } from 'lucide-react';
-import Barcode from 'react-barcode';
+import { Send, CheckCircle2, Package, Printer, Clock, CheckCircle } from 'lucide-react';
+import QRCode from 'react-qr-code';
+import { useAuth } from '@/lib/AuthContext';
 
 type Item = {
   id: string;
@@ -196,7 +197,7 @@ export default function TransferPage() {
 
         {/* History Section */}
         <div className="lg:col-span-2">
-          <div className="rounded-xl border bg-white shadow-sm overflow-hidden">
+          <div className="rounded-xl border bg-white shadow-sm overflow-x-auto">
             <div className="p-6 border-b bg-slate-50">
               <h3 className="font-semibold text-lg">Riwayat & Status Pengiriman</h3>
             </div>
@@ -256,19 +257,19 @@ export default function TransferPage() {
 
       {/* Print Modal */}
       {printTrx && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-xl shadow-xl w-full max-w-2xl p-8 text-center print:shadow-none print:w-full print:h-full print:flex print:flex-col print:items-center print:justify-center">
+        <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-200">
+          <div className="bg-white rounded-2xl shadow-xl w-full max-w-sm p-8 text-center print:shadow-none print:w-full print:h-full print:flex print:flex-col print:items-center print:justify-center">
             <h3 className="font-bold text-xl mb-2">{printTrx.name}</h3>
             <p className="text-sm text-slate-500 mb-6 font-mono font-medium">{printTrx.id}</p>
             
-            <div className="bg-white inline-block p-4 border-2 border-dashed border-slate-200 rounded-xl mb-6 max-w-full overflow-x-auto">
-              <Barcode value={printTrx.id} width={1.5} height={80} fontSize={14} />
+            <div className="bg-white inline-block p-4 border-2 border-dashed border-slate-200 rounded-xl mb-6 mx-auto">
+              <QRCode value={printTrx.id} size={160} />
             </div>
             
             <div className="flex justify-center gap-3 print:hidden">
-              <button onClick={() => setPrintTrx(null)} className="px-4 py-2 text-slate-600 hover:bg-slate-100 border rounded-lg font-medium transition-colors">Tutup</button>
+              <button onClick={() => setPrintTrx(null)} className="px-4 py-2 text-slate-600 hover:bg-slate-100 rounded-lg font-medium transition-colors">Tutup</button>
               <button onClick={handlePrint} className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium flex items-center gap-2 transition-colors">
-                <Printer className="w-4 h-4" /> Cetak Sekarang
+                <Printer className="w-4 h-4" /> Cetak QR Code
               </button>
             </div>
           </div>

@@ -66,8 +66,8 @@ export default function HistoryPage() {
         <h1 className="text-3xl font-bold tracking-tight">Riwayat Transaksi</h1>
       </div>
 
-      <div className="rounded-xl border bg-white shadow-sm overflow-hidden">
-        <table className="w-full text-sm text-left">
+      <div className="rounded-xl border bg-white shadow-sm overflow-x-auto">
+        <table className="w-full text-sm text-left min-w-[600px]">
           <thead className="bg-slate-50 border-b text-slate-500 font-medium">
             <tr>
               <th className="px-6 py-4">Waktu</th>
