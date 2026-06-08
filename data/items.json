@@ -1,0 +1,14 @@
+[
+  {
+    "id": "ELK-TV-001",
+    "name": "Smart TV Samsung 43 Inch",
+    "type": "TV",
+    "category": "Elektronik"
+  },
+  {
+    "id": "PRB-KRS-002",
+    "name": "Kursi Kantor Ergonomis",
+    "type": "Kursi",
+    "category": "Perabotan"
+  }
+]

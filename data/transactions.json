@@ -1,0 +1,65 @@
+[
+  {
+    "id": "TRX-1780910388259",
+    "itemId": "ELK-TV-001",
+    "from": "gudang",
+    "to": "cabang-2",
+    "qty": 12,
+    "status": "PENDING",
+    "date": "2026-06-08T09:19:48.260Z"
+  },
+  {
+    "id": "TRX-1780910540416",
+    "itemId": "ELK-TV-001",
+    "from": "gudang",
+    "to": "cabang-1",
+    "qty": 20,
+    "status": "PENDING",
+    "date": "2026-06-08T09:22:20.416Z"
+  },
+  {
+    "id": "TRX-1780910642651",
+    "itemId": "PRB-KRS-002",
+    "from": "gudang",
+    "to": "cabang-1",
+    "qty": 50,
+    "status": "COMPLETED",
+    "date": "2026-06-08T09:24:02.652Z"
+  },
+  {
+    "id": "TRX-1780911539749",
+    "itemId": "PRB-KRS-002",
+    "from": "gudang",
+    "to": "cabang-1",
+    "qty": 20,
+    "status": "PENDING",
+    "date": "2026-06-08T09:38:59.749Z"
+  },
+  {
+    "id": "ELK-TV-001-080626-ZHL0",
+    "itemId": "ELK-TV-001",
+    "from": "gudang",
+    "to": "cabang-1",
+    "qty": 5,
+    "status": "COMPLETED",
+    "date": "2026-06-08T09:44:31.525Z"
+  },
+  {
+    "id": "ELK-TV-001-080626-SIYW",
+    "itemId": "ELK-TV-001",
+    "from": "gudang",
+    "to": "cabang-1",
+    "qty": 5,
+    "status": "COMPLETED",
+    "date": "2026-06-08T09:50:20.075Z"
+  },
+  {
+    "id": "ELK-TV-001-080626-BB0T",
+    "itemId": "ELK-TV-001",
+    "from": "gudang",
+    "to": "cabang-1",
+    "qty": 10,
+    "status": "COMPLETED",
+    "date": "2026-06-08T11:12:50.087Z"
+  }
+]

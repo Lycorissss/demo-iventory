@@ -1,0 +1,27 @@
+[
+  {
+    "itemId": "ELK-TV-001",
+    "location": "gudang",
+    "qty": 35
+  },
+  {
+    "itemId": "ELK-TV-001",
+    "location": "cabang-1",
+    "qty": 20
+  },
+  {
+    "itemId": "PRB-KRS-002",
+    "location": "gudang",
+    "qty": 50
+  },
+  {
+    "itemId": "PRB-KRS-002",
+    "location": "cabang-1",
+    "qty": 50
+  },
+  {
+    "itemId": "ELK-TV-001-080626-ZHL0",
+    "location": "cabang-1",
+    "qty": 5
+  }
+]
